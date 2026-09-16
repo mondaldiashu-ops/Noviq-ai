@@ -1,3 +1,3 @@
-# NoviqAI
+NoviqAI
 
 AI-powered website project.
