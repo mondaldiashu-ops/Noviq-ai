@@ -15,127 +15,140 @@ body{
   min-height:100vh;
 }
 
-.app{
-  display:flex;
-  min-height:100vh;
-}
+button,input,textarea,select{font:inherit}
+
+.app{display:flex;min-height:100vh}
 
 /* SIDEBAR */
 .sidebar{
-  width:260px;
-  background:#0b0f19;
-  border-right:1px solid #202738;
-  padding:18px;
+  width:270px;
   position:fixed;
-  left:0;
   top:0;
   bottom:0;
+  left:0;
+  background:#0b0f19;
+  border-right:1px solid #20283a;
+  padding:18px;
   overflow-y:auto;
+  z-index:20;
 }
 
 .logo{
-  font-size:25px;
+  font-size:27px;
   font-weight:800;
-  margin-bottom:25px;
+  margin-bottom:22px;
 }
 
-.logo span{
-  color:#6c7cff;
-}
+.logo span{color:#7180ff}
 
-.newchat{
+.new-chat{
   width:100%;
   padding:13px;
   border:0;
   border-radius:12px;
   background:#5967ff;
   color:white;
-  font-size:15px;
   cursor:pointer;
   margin-bottom:20px;
 }
 
 .menu-title{
-  color:#7d879d;
-  font-size:12px;
-  margin:18px 5px 8px;
+  color:#737e95;
+  font-size:11px;
+  margin:18px 5px 7px;
   text-transform:uppercase;
 }
 
 .menu button{
   width:100%;
-  text-align:left;
   padding:11px;
-  margin:3px 0;
+  margin:2px 0;
   border:0;
   border-radius:9px;
   background:transparent;
-  color:#d8ddec;
+  color:#dbe0ec;
+  text-align:left;
   cursor:pointer;
 }
 
-.menu button:hover{
-  background:#151b2b;
-}
+.menu button:hover{background:#151b2b}
 
 /* MAIN */
 .main{
-  margin-left:260px;
-  width:calc(100% - 260px);
+  margin-left:270px;
+  width:calc(100% - 270px);
   min-height:100vh;
 }
 
 .topbar{
-  height:65px;
-  border-bottom:1px solid #202738;
+  height:64px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#080c15;
+  border-bottom:1px solid #20283a;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 25px;
-  background:#080c15;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.topbar h2{
-  font-size:19px;
 }
 
 .status{
   font-size:12px;
-  color:#72e6a8;
+  color:#75e2a5;
 }
 
 /* HOME */
 .home{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
   padding:55px 25px;
 }
 
-.hero{
-  text-align:center;
-  margin-bottom:45px;
-}
+.hero{text-align:center;margin-bottom:42px}
 
 .hero h1{
-  font-size:46px;
-  margin-bottom:15px;
+  font-size:48px;
+  margin-bottom:14px;
 }
 
-.hero h1 span{
-  color:#7180ff;
-}
+.hero h1 span{color:#7180ff}
 
 .hero p{
-  color:#9ba5ba;
-  max-width:700px;
+  max-width:720px;
   margin:auto;
+  color:#9ba5ba;
   line-height:1.7;
 }
 
-/* FEATURES */
+.search{
+  max-width:800px;
+  margin:30px auto 45px;
+  background:#101625;
+  border:1px solid #29344a;
+  border-radius:16px;
+  padding:8px;
+  display:flex;
+}
+
+.search input{
+  flex:1;
+  background:transparent;
+  color:white;
+  border:0;
+  outline:0;
+  padding:14px;
+}
+
+.search button{
+  border:0;
+  background:#5967ff;
+  color:white;
+  padding:0 18px;
+  border-radius:11px;
+  cursor:pointer;
+}
+
 .features{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
@@ -145,4 +158,1023 @@ body{
 .card{
   background:#0d1220;
   border:1px solid #20283b;
-  padding:20
+  padding:20px;
+  border-radius:16px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#6876ff;
+}
+
+.icon{font-size:28px;margin-bottom:12px}
+
+.card h3{margin-bottom:7px}
+
+.card p{
+  color:#8e98ac;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* CHAT */
+.chat{
+  display:none;
+  height:calc(100vh - 64px);
+  flex-direction:column;
+}
+
+.messages{
+  flex:1;
+  overflow-y:auto;
+  padding:25px;
+}
+
+.message{
+  max-width:900px;
+  margin:0 auto 18px;
+  display:flex;
+  gap:12px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#5967ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-weight:bold;
+}
+
+.bubble{
+  background:#101625;
+  border:1px solid #20283b;
+  padding:14px 17px;
+  border-radius:14px;
+  line-height:1.65;
+  white-space:pre-wrap;
+}
+
+.user .bubble{background:#18204a}
+
+.chat-input{
+  padding:15px;
+  border-top:1px solid #20283a;
+}
+
+.input-box{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  gap:8px;
+  padding:8px;
+  background:#101625;
+  border:1px solid #29344a;
+  border-radius:15px;
+}
+
+.input-box textarea{
+  flex:1;
+  min-height:48px;
+  max-height:150px;
+  resize:none;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:white;
+  padding:12px;
+}
+
+.send{
+  width:52px;
+  border:0;
+  border-radius:11px;
+  background:#5967ff;
+  color:white;
+  cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(0,0,0,.78);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-box{
+  width:100%;
+  max-width:700px;
+  max-height:90vh;
+  overflow:auto;
+  background:#0d1220;
+  border:1px solid #29344a;
+  border-radius:18px;
+  padding:25px;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.close{
+  border:0;
+  background:none;
+  color:white;
+  font-size:27px;
+  cursor:pointer;
+}
+
+.modal input,
+.modal textarea,
+.modal select{
+  width:100%;
+  padding:13px;
+  margin:7px 0 14px;
+  border:1px solid #29344a;
+  border-radius:10px;
+  background:#080c15;
+  color:white;
+}
+
+.action{
+  padding:12px 18px;
+  border:0;
+  border-radius:10px;
+  background:#5967ff;
+  color:white;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:15px;
+  padding:15px;
+  background:#080c15;
+  border-radius:12px;
+  line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+
+  .sidebar{
+    width:245px;
+    transform:translateX(-100%);
+    transition:.25s;
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .hero h1{font-size:35px}
+
+  .home{padding:35px 16px}
+
+  .topbar{padding:0 15px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+  <div class="logo">Noviq<span>AI</span></div>
+
+  <button class="new-chat" onclick="newChat()">
+    ＋ New Chat
+  </button>
+
+  <div class="menu-title">AI</div>
+
+  <div class="menu">
+    <button onclick="showChat()">🤖 Universal AI</button>
+    <button onclick="openFeature('Study Mode')">📚 Study Mode</button>
+    <button onclick="openFeature('Research')">🔎 Research</button>
+    <button onclick="openFeature('Writing')">✍️ Writing</button>
+    <button onclick="openFeature('Translation')">🌐 Translation</button>
+  </div>
+
+  <div class="menu-title">Education</div>
+
+  <div class="menu">
+    <button onclick="openFeature('Math Solver')">➗ Math</button>
+    <button onclick="openFeature('Science')">🔬 Science</button>
+    <button onclick="openFeature('History')">📜 History</button>
+    <button onclick="openFeature('Geography')">🌍 Geography</button>
+    <button onclick="openFeature('Quiz Generator')">🧠 Quiz</button>
+  </div>
+
+  <div class="menu-title">Developer</div>
+
+  <div class="menu">
+    <button onclick="openFeature('Code Expert')">💻 Code Expert</button>
+    <button onclick="openFeature('Bug Fixer')">🐞 Bug Fixer</button>
+    <button onclick="openFeature('Code Explainer')">📖 Code Explainer</button>
+    <button onclick="openFeature('Project Builder')">🚀 Project Builder</button>
+  </div>
+
+  <div class="menu-title">Tools</div>
+
+  <div class="menu">
+    <button onclick="openFeature('Grammar')">🔤 Grammar</button>
+    <button onclick="openFeature('Idea Generator')">💡 Ideas</button>
+    <button onclick="openFeature('Calculator')">🧮 Calculator</button>
+    <button onclick="openFeature('General Knowledge')">🌎 GK</button>
+  </div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+  <h2>NoviqAI</h2>
+  <div class="status">● Ready</div>
+</header>
+
+<!-- HOME -->
+<section class="home" id="home">
+
+  <div class="hero">
+
+    <h1>Meet <span>NoviqAI</span></h1>
+
+    <p>
+      Your universal AI workspace for questions, learning,
+      coding, mathematics, science, languages, writing,
+      research and creativity.
+    </p>
+
+  </div>
+
+  <div class="search">
+
+    <input
+      id="homeInput"
+      placeholder="Ask NoviqAI anything..."
+      onkeydown="homeKey(event)"
+    >
+
+    <button onclick="homeAsk()">Ask</button>
+
+  </div>
+
+  <div class="features">
+
+    <div class="card" onclick="showChat()">
+      <div class="icon">🤖</div>
+      <h3>Universal AI</h3>
+      <p>Ask questions about any subject.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Code Expert')">
+      <div class="icon">💻</div>
+      <h3>Code Expert</h3>
+      <p>Programming, debugging and project help.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Study Mode')">
+      <div class="icon">📚</div>
+      <h3>Study Mode</h3>
+      <p>Learn lessons step by step.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Translation')">
+      <div class="icon">🌐</div>
+      <h3>Languages</h3>
+      <p>Translation and language learning.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Math Solver')">
+      <div class="icon">➗</div>
+      <h3>Math Solver</h3>
+      <p>Calculate and solve problems.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Science')">
+      <div class="icon">🔬</div>
+      <h3>Science</h3>
+      <p>Physics, chemistry and biology.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Writing')">
+      <div class="icon">✍️</div>
+      <h3>Writing</h3>
+      <p>Essays, stories, letters and rewriting.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Quiz Generator')">
+      <div class="icon">🧠</div>
+      <h3>Quiz Generator</h3>
+      <p>Create MCQs and practice questions.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Research')">
+      <div class="icon">🔎</div>
+      <h3>Research</h3>
+      <p>Explore topics and organize information.</p>
+    </div>
+
+    <div class="card" onclick="openFeature('Idea Generator')">
+      <div class="icon">💡</div>
+      <h3>Idea Generator</h3>
+      <p>Generate creative ideas.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHAT -->
+<section class="chat" id="chat">
+
+  <div class="messages" id="messages">
+
+    <div class="message">
+
+      <div class="avatar">N</div>
+
+      <div class="bubble">
+Hello! 👋
+
+I'm NoviqAI.
+
+Ask me anything about:
+• Coding
+• Mathematics
+• Science
+• Languages
+• History
+• Geography
+• Study
+• Writing
+• General knowledge
+• Creative ideas
+
+What would you like to know?
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="chat-input">
+
+    <div class="input-box">
+
+      <textarea
+        id="userInput"
+        placeholder="Message NoviqAI..."
+        onkeydown="chatKey(event)"
+      ></textarea>
+
+      <button class="send" onclick="sendMessage()">➤</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+
+      <h2 id="modalTitle">NoviqAI</h2>
+
+      <button class="close" onclick="closeModal()">×</button>
+
+    </div>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function showChat(){
+
+  document.getElementById("home").style.display="none";
+  document.getElementById("chat").style.display="flex";
+
+  setTimeout(()=>{
+    document.getElementById("userInput").focus();
+  },100);
+
+}
+
+function newChat(){
+
+  document.getElementById("messages").innerHTML=`
+
+    <div class="message">
+
+      <div class="avatar">N</div>
+
+      <div class="bubble">
+New conversation started. 🚀
+What would you like to know?
+      </div>
+
+    </div>
+
+  `;
+
+  showChat();
+
+}
+
+function homeKey(e){
+
+  if(e.key==="Enter"){
+    homeAsk();
+  }
+
+}
+
+function homeAsk(){
+
+  const input=document.getElementById("homeInput");
+
+  const text=input.value.trim();
+
+  if(!text)return;
+
+  showChat();
+
+  document.getElementById("userInput").value=text;
+
+  input.value="";
+
+  sendMessage();
+
+}
+
+function chatKey(e){
+
+  if(e.key==="Enter" && !e.shiftKey){
+
+    e.preventDefault();
+
+    sendMessage();
+
+  }
+
+}
+
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+/* =========================
+   CHAT
+========================= */
+
+function addMessage(text,type){
+
+  const box=document.getElementById("messages");
+
+  const message=document.createElement("div");
+
+  message.className="message "+type;
+
+  message.innerHTML=`
+
+    <div class="avatar">
+      ${type==="user" ? "U" : "N"}
+    </div>
+
+    <div class="bubble">
+      ${escapeHTML(text)}
+    </div>
+
+  `;
+
+  box.appendChild(message);
+
+  box.scrollTop=box.scrollHeight;
+
+}
+
+/*
+====================================================
+BACKEND CONNECTION
+====================================================
+
+After deploying your backend, change:
+
+const BACKEND_URL = "YOUR_BACKEND_URL";
+
+Example:
+
+const BACKEND_URL =
+"https://your-noviqai-backend.onrender.com";
+
+DO NOT put an OpenAI API key here.
+====================================================
+*/
+
+const BACKEND_URL = "YOUR_BACKEND_URL";
+
+async function sendMessage(){
+
+  const input=document.getElementById("userInput");
+
+  const text=input.value.trim();
+
+  if(!text)return;
+
+  addMessage(text,"user");
+
+  input.value="";
+
+  addMessage("Thinking...","ai");
+
+  const messages=document.getElementById("messages");
+
+  const thinking=messages.lastElementChild;
+
+  /* Backend is not connected yet */
+
+  if(
+    !BACKEND_URL ||
+    BACKEND_URL==="YOUR_BACKEND_URL"
+  ){
+
+    thinking.querySelector(".bubble").textContent=
+
+`NoviqAI is ready! 🤖
+
+Your frontend is working.
+
+To get real AI answers, connect your secure backend here:
+
+index.html
+      ↓
+Backend
+      ↓
+AI API
+      ↓
+NoviqAI
+
+Your API key should NEVER be placed inside this HTML file.`;
+
+    return;
+
+  }
+
+  try{
+
+    const response=await fetch(
+      BACKEND_URL+"/api/chat",
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+          message:text
+        })
+      }
+    );
+
+    if(!response.ok){
+      throw new Error("Server error");
+    }
+
+    const data=await response.json();
+
+    thinking.querySelector(".bubble").textContent=
+      data.reply || "No answer received.";
+
+  }
+
+  catch(error){
+
+    thinking.querySelector(".bubble").textContent=
+      "Connection error. Please check your backend.";
+
+    console.error(error);
+
+  }
+
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+function openFeature(name){
+
+  const modal=document.getElementById("modal");
+
+  modal.style.display="flex";
+
+  document.getElementById("modalTitle").textContent=name;
+
+  let html="";
+
+  if(name==="Translation"){
+
+    html=`
+
+      <p>🌐 Translate between languages.</p>
+
+      <select id="fromLanguage">
+        <option>Auto Detect</option>
+        <option>Bengali</option>
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Japanese</option>
+        <option>Korean</option>
+        <option>Chinese</option>
+        <option>Spanish</option>
+        <option>French</option>
+        <option>German</option>
+        <option>Italian</option>
+        <option>Portuguese</option>
+        <option>Russian</option>
+        <option>Arabic</option>
+        <option>Turkish</option>
+        <option>Indonesian</option>
+      </select>
+
+      <select id="toLanguage">
+        <option>English</option>
+        <option>Bengali</option>
+        <option>Hindi</option>
+        <option>Japanese</option>
+        <option>Korean</option>
+        <option>Chinese</option>
+        <option>Spanish</option>
+        <option>French</option>
+        <option>German</option>
+        <option>Arabic</option>
+      </select>
+
+      <textarea
+        id="translationInput"
+        placeholder="Write text here..."
+      ></textarea>
+
+      <button class="action" onclick="translationAsk()">
+        Translate
+      </button>
+
+      <div class="result" id="featureResult"></div>
+
+    `;
+
+  }
+
+  else if(name==="Math Solver"){
+
+    html=`
+
+      <p>➗ Enter your calculation.</p>
+
+      <input
+        id="mathInput"
+        placeholder="Example: 25 × 12 + 50"
+      >
+
+      <button class="action" onclick="calculateMath()">
+        Calculate
+      </button>
+
+      <div class="result" id="featureResult"></div>
+
+    `;
+
+  }
+
+  else if(name==="Calculator"){
+
+    html=`
+
+      <p>🧮 Quick calculator.</p>
+
+      <input
+        id="calculatorInput"
+        placeholder="Example: 100 / 4"
+      >
+
+      <button class="action" onclick="calculateMath(true)">
+        Calculate
+      </button>
+
+      <div class="result" id="featureResult"></div>
+
+    `;
+
+  }
+
+  else if(name==="Quiz Generator"){
+
+    html=`
+
+      <p>🧠 Create a practice quiz.</p>
+
+      <input
+        id="quizTopic"
+        placeholder="Example: Class 10 Physics"
+      >
+
+      <select id="quizDifficulty">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <button class="action" onclick="generateQuiz()">
+        Generate
+      </button>
+
+      <div class="result" id="featureResult"></div>
+
+    `;
+
+  }
+
+  else if(
+    name==="Code Expert" ||
+    name==="Bug Fixer" ||
+    name==="Code Explainer" ||
+    name==="Project Builder"
+  ){
+
+    html=`
+
+      <p>💻 ${escapeHTML(name)}</p>
+
+      <textarea
+        id="codeInput"
+        style="min-height:200px"
+        placeholder="Paste your code here..."
+      ></textarea>
+
+      <button class="action"
+        onclick="sendToolToAI('${name}')">
+        Ask NoviqAI
+      </button>
+
+    `;
+
+  }
+
+  else{
+
+    html=`
+
+      <p style="line-height:1.7">
+
+        <b>${escapeHTML(name)}</b> is ready.
+
+        <br><br>
+
+        Use NoviqAI Universal AI to ask questions
+        about this topic.
+
+      </p>
+
+      <button class="action"
+        onclick="closeModal();showChat()">
+
+        Open Universal AI
+
+      </button>
+
+    `;
+
+  }
+
+  document.getElementById("modalContent").innerHTML=html;
+
+}
+
+function closeModal(){
+
+  document.getElementById("modal").style.display="none";
+
+}
+
+/* =========================
+   MATH
+========================= */
+
+function calculateMath(calculator=false){
+
+  const id=calculator
+    ?"calculatorInput"
+    :"mathInput";
+
+  const input=document.getElementById(id);
+
+  const result=document.getElementById("featureResult");
+
+  let expression=input.value
+    .replace(/×/g,"*")
+    .replace(/÷/g,"/")
+    .replace(/[^0-9+\-*/().% ]/g,"");
+
+  if(!expression){
+
+    result.textContent="Enter a valid calculation.";
+
+    return;
+
+  }
+
+  try{
+
+    const answer=Function(
+      '"use strict";return ('+
+      expression+
+      ')'
+    )();
+
+    result.textContent="Answer: "+answer;
+
+  }
+
+  catch{
+
+    result.textContent="Could not calculate.";
+
+  }
+
+}
+
+/* =========================
+   TRANSLATION
+========================= */
+
+function translationAsk(){
+
+  const text=
+    document.getElementById("translationInput").value;
+
+  const from=
+    document.getElementById("fromLanguage").value;
+
+  const to=
+    document.getElementById("toLanguage").value;
+
+  if(!text)return;
+
+  closeModal();
+
+  showChat();
+
+  document.getElementById("userInput").value=
+    `Translate this from ${from} to ${to}:
+
+${text}`;
+
+  sendMessage();
+
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+function generateQuiz(){
+
+  const topic=
+    document.getElementById("quizTopic").value ||
+    "General Knowledge";
+
+  const difficulty=
+    document.getElementById("quizDifficulty").value;
+
+  document.getElementById("featureResult").innerHTML=`
+
+    <b>Topic:</b> ${escapeHTML(topic)}
+
+    <br>
+
+    <b>Difficulty:</b> ${escapeHTML(difficulty)}
+
+    <br><br>
+
+    1. What is an important fact about ${escapeHTML(topic)}?
+
+    <br><br>
+
+    2. Which statement is correct?
+
+    <br><br>
+
+    3. Explain one important concept.
+
+    <br><br>
+
+    <small>
+      Connect the backend for dynamically generated AI quizzes.
+    </small>
+
+  `;
+
+}
+
+/* =========================
+   SEND TOOL REQUEST TO AI
+========================= */
+
+function sendToolToAI(tool){
+
+  const code=
+    document.getElementById("codeInput").value;
+
+  closeModal();
+
+  showChat();
+
+  document.getElementById("userInput").value=
+`${tool}
+
+Please help me with this:
+
+${code}`;
+
+  sendMessage();
+
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+  document
+    .getElementById("sidebar")
+    .classList.toggle("open");
+
+}
+
+/* Close modal by clicking outside */
+
+document.getElementById("modal").addEventListener(
+  "click",
+  function(e){
+
+    if(e.target===this){
+      closeModal();
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
